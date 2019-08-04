@@ -1,0 +1,67 @@
+import React from 'react';
+import { Link } from "react-router-dom"
+import ItemDetails from './ItemDetails'
+
+class Home extends React.Component {
+    constructor(props) {
+      super(props);
+  
+      this.state = {
+        error: null,
+        isLoaded: false,
+        jokesItems: [],
+        currentData :[],
+         flag : false 
+      };
+   }
+   componentDidMount() {
+       console.log("hii");
+    fetch("https://official-joke-api.appspot.com/jokes/ten")
+      .then(res => res.json())
+      .then(
+        (result) => {
+            console.log(result, "hii");
+          this.setState({
+            isLoaded: true,
+            jokesItems: result
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+  getCurrentData(item){
+    //   console.log(item , "ii")
+    // return (
+    //     <ItemDetails data = {item} />
+    // )
+  }
+  render() {
+    const { error, isLoaded, jokesItems } = this.state;
+    
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+    <div>
+        <ul>
+          {jokesItems.map(item => (
+            <li key={item.id} onClick = {this.getCurrentData.bind(this,item)} >
+               <Link to="/details">
+                  {item.punchline} 
+                </Link>
+            </li>
+          ))}
+        </ul>
+     </div>
+      );
+    }
+  }
+}
+  export default Home;

@@ -1,0 +1,52 @@
+.joksItemWrapper h4{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.joksItemWrapper ul{
+   max-width:500px;
+   margin:0 auto;
+   margin-bottom: 40px;
+}
+.joksItemWrapper ul li a{
+  font-size:16px;
+  color:#1c1c1c;
+  font-weight: 400;
+  display: block;
+  line-height: 22px;
+}
+.joksItemWrapper ul li{
+  font-size:16px;
+  color:#1c1c1c;
+  font-weight: 400;
+  line-height: 22px;
+}
+.joksItemWrapper ul li:hover{
+  font-size:16px;
+  color:#1c1c1c;
+  font-weight: 400;
+  line-height: 22px;
+}
+.joksItemWrapper ul li a:hover{
+  color:#d2356b;
+}
+.comment-section{
+  max-width:300px;
+  margin:0 auto;
+  margin-bottom:20px;
+}
+.comment-section input[type = "text"]{
+   height:40px;
+   padding:15px;
+   font-size:14px;
+   line-height: 20px;
+   font-weight: 400;
+   bordeR:1px solid #675c5c;
+   border-radius: 5px;
+}
+.comment-section input[type = "button"]{
+  background: #989595;
+  color: white;
+  padding: 7px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
